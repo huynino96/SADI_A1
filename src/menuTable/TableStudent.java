@@ -1,4 +1,4 @@
-package facade;
+package menuTable;
 
 public class TableStudent implements Table {
     @Override
