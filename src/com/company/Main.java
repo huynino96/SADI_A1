@@ -9,7 +9,14 @@ import lambda.ProgramMessage;
 import sample.Courses;
 import sample.Students;
 import singleton.EnrollmentStorageSingleton;
+import state.ProgramState;
 import template.EnrollmentProgram;
+import visitor.ProgramMessageSystem;
+import visitor.ProgramStartMessage;
+import visitor.Visitor;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Main {
 
@@ -40,6 +47,34 @@ public class Main {
         ProgramMessage repeatMessage = (message) -> System.out.println(message);
         ProgramMessage invalidMessage = (message) -> System.out.println("Invalid: " + message);
 
+        // Program state
+        ProgramState programState = new ProgramState();
+        programState.next();
+
+        // Main program
+        do {
+            try {
+                ProgramMessageSystem programStartMessage = new ProgramStartMessage();
+                programStartMessage.invite(new Visitor());
+
+                Scanner scan = new Scanner(System.in);
+                enrollmentProgram.start();
+                repeatMessage.print("Would you like to continue? Enter Y to continue or any other key to quit: ");
+                repeat = scan.nextLine();
+            } catch (InputMismatchException e) {
+                invalidMessage.print("input, let's try again");
+                repeat = "Y";
+            } catch (IndexOutOfBoundsException e) {
+                invalidMessage.print("the selection are not avaliable");
+                repeat = "Y";
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+                repeat = "Y";
+            }
+
+        } while (repeat.equalsIgnoreCase("Y"));
+
+        programState.next();
 
     }
 }
