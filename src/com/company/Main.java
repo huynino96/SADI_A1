@@ -65,7 +65,7 @@ public class Main {
                 invalidMessage.print("input, let's try again");
                 repeat = "Y";
             } catch (IndexOutOfBoundsException e) {
-                invalidMessage.print("the selection are not avaliable");
+                invalidMessage.print("the selection are not available");
                 repeat = "Y";
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());

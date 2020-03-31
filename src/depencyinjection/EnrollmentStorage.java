@@ -17,8 +17,8 @@ public class EnrollmentStorage {
         int position = 0;
         String listString = "";
         for (StudentEnrollment studentEnrollment : studentEnrollments) {
-            listString += position + " |STUDENT: " + studentEnrollment.getStudent().toString() + "\n";
-            listString += "  |COURSE: " + studentEnrollment.getCourse().toString() + "\n";
+            listString += position + " |STUDENT: " + studentEnrollment.getStudent().name + "\n";
+            listString += "  |COURSE: " + studentEnrollment.getCourse().name + "\n";
             listString += "  |SEMESTER: " + studentEnrollment.getSemester() + "\n";
             listString += "\n";
             position += 1;

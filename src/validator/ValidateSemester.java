@@ -14,12 +14,9 @@ public class ValidateSemester implements Validator {
     @Override
     public boolean validate(String input) {
         validator.validate(input);
-        if (input.length() > 4) {
-            char firstChar = input.charAt(0);
-            char secondChar = input.charAt(1);
-            char thirdChar = input.charAt(2);
-            char fourthChar = input.charAt(3);
-            return isDigit(firstChar) && isDigit(secondChar) && isDigit(thirdChar) && isDigit(fourthChar);
+        int semester = Integer.valueOf(input);
+        if (semester > 0 && semester < 5) {
+            return true;
         } else {
             return false;
         }
