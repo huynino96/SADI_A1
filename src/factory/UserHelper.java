@@ -3,7 +3,7 @@ package factory;
 import decorator.ValidateEmptyInput;
 import decorator.ValidateSemester;
 import decorator.Validator;
-import Facade.TableMaker;
+import facade.TableMaker;
 import model.Course;
 import model.Student;
 import model.StudentEnrollment;

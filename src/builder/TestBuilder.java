@@ -13,6 +13,7 @@ public class TestBuilder {
         course.add(new CourseBuilder().id("COSC2440").name("Software Architecture Design and Implementation").numberOfCredits(12).build());
         Assert.assertEquals("ID: COSC2440, Name: Software Architecture Design and Implementation, Credit: 12", course);
     }
+
     @Test
     public void testStudentBuilder(){
         Students students = new Students();

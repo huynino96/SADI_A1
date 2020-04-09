@@ -1,4 +1,4 @@
-package Facade;
+package facade;
 
 public interface Table {
     void header();
