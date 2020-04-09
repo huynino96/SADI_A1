@@ -1,4 +1,4 @@
-package menuTable;
+package Facade;
 
 public class TableMaker {
     private TableCourse tableCourse;

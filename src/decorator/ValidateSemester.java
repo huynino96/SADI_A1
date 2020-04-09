@@ -1,4 +1,4 @@
-package validator;
+package decorator;
 
 public class ValidateSemester implements Validator {
     private Validator validator;

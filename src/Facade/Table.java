@@ -1,4 +1,4 @@
-package menuTable;
+package Facade;
 
 public interface Table {
     void header();
