@@ -53,7 +53,7 @@ public class UserHelper implements ProgramHelper {
         int courseSelection = courseScanner.nextInt();
         Course course = courses.find(courseSelection);
 
-        Scanner semesterScanner = getUserInput("What semester do you in ?");
+        Scanner semesterScanner = getUserInput("What semester do you in ? (Ex: 2020A, 2019C)");
         String semester = semesterScanner.next();
 
         Validator validator = new ValidateSemester(new ValidateEmptyInput());
